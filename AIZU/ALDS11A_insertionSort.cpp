@@ -4,16 +4,17 @@
 using namespace std;
 
 void inserSort(int lst[], size_t len){
-	int select, j;
+	int key, pos;
 
 	for(size_t i = 1; i < len; i ++){
-		select = lst[i];
-		j = i - 1;
+		key = lst[i];
+		pos = i - 1;
 
-		while(j >= 0 && lst[j] > select){
-			swap(lst[j], lst[j + 1]);
-			j --;
+		while(pos >= 0 && lst[pos] > key){
+			lst[pos + 1] = lst[pos];
+			pos --;
 		}
+		lst[pos + 1] = key;
 	}
 }
 
